@@ -1,0 +1,23 @@
+header {
+ background-color: rgb(28, 28, 128);
+ height: 60px;
+ width: 100vw;
+}
+
+.header_boxLink {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ height: 100%;
+}
+
+.header_link {
+ color: white;
+ font-size: 22px;
+ text-decoration: none;
+ transition: 1s;
+}
+
+.header_link:hover {
+  color: rgb(185, 6, 6);
+}

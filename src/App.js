@@ -8,6 +8,9 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/filmes" element={' '} />
+          <Route exact path="/atores" element={' '} />
+          <Route exact path="/locacao" element={' '} />
         </Switch>
       </div>
     </BrowserRouter>
