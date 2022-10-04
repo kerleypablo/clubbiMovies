@@ -1,0 +1,111 @@
+.conteiner{
+  display: flex;
+  justify-content: center;
+}
+
+.painel {
+  height: 300px;
+  border: 1px solid black;
+  border-right: 5px solid rgb(18, 22, 133);
+  border-radius: 30px;
+  margin: 10px;
+  width: 200px;
+}
+
+.Cardfilm_img {
+ height: 300px;
+ border-radius: 30px;
+ box-shadow: 2px 2px 2px 2px blue;
+}
+
+.Cardfilm_img:hover {
+  box-shadow: 2px 2px 25px 8px rgb(95, 95, 141);
+}
+
+
+.cardButton {
+  border: none;
+  background-color: white;
+}
+
+.active_painel {
+    background-color: rgb(193, 193, 228);
+    display: flex;
+    height: 300px;
+    border: 1px solid black;
+    border-right: 5px solid rgb(18, 22, 133);
+    border-radius: 30px;
+    margin: 10px;
+    animation-name:  expand;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+    0% { width:10% }
+    100%{ width: 50%}
+}
+
+.Cardinfo {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  animation-name:  showup;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showup {
+    0% { opacity: 0;}
+    50%{ opacity: 0; }
+    100%{ opacity: 100;}
+}
+
+.info2 {
+ display: flex;
+ justify-content: space-around;
+}
+
+.Cardinfo h5 {
+ font-size: 11px;
+ margin-top: -10px;
+ color: rgb(99, 97, 97);
+}
+
+.Cardinfo h3 {
+  font-weight: 800;
+}
+
+.Cardinfo h4 {
+ margin-top: -10px;
+ font-size: 12px;
+}
+
+.Cardinfo span {
+ margin-top: -20px;
+ padding: 10px 60px;
+ font-size: 12px;
+}
+
+.CardScore  {
+ display: flex;
+ height: 100%;
+ align-items: flex-end;
+ justify-content: center;
+}
+
+.CardScore p {
+  background-color: rgba(255, 255, 0, 0.741);
+}
+
+.buttonCard {
+ padding-top: 20px;
+ margin-top: -15px;
+}
+
+.buttonCard button {
+  width: 300px;
+  height: 30px;
+  background-color: blueviolet;
+  border:  none;
+}

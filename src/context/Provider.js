@@ -4,7 +4,10 @@ import Context from './Context';
 import { getFilms } from '../Services/filmesServices';
 
 function Provider({ children }) {
-  const [filmes, setfilmes] = useState([]);
+  const [filmes, setfilmes] = ([]);
+  const [search, setSearch] = useState({
+    inputText: '',
+  });
 
   const getallFilms = async () => {
     const data = await getFilms();
@@ -19,6 +22,8 @@ function Provider({ children }) {
   const state = useMemo(() => ({
     filmes,
     setfilmes,
+    search,
+    setSearch,
   }), [filmes]);
 
   return (
