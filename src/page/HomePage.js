@@ -7,8 +7,7 @@ import './Styles/HomePage.css';
 export default function Homepage() {
   return (
     <div>
-      <h1>ClubbiMovies</h1>
-      <Header />
+      <Header title="ClubbiMovies" />
       <section className="section_box">
         <Card img={imgFilm} title="Filmes" page="filmes" />
         <Card img={imgActor} title="Atores/Atrizes" page="atores" />
