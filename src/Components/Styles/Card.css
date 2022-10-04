@@ -1,0 +1,62 @@
+.Card_Box{
+ border: 3px solid rgb(63, 33, 131);
+ border-radius: 15px;
+ height: 400px;
+ width: 300px;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ position: relative;
+}
+
+.container {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+  }
+
+.card {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+
+.Card_Box img {
+ width: 280px;
+ height: 380px;
+ border-radius: 15px;
+ margin-top: 10px;
+ opacity: 30%;
+ transform: translate(0,0);
+ transition: opacity .25s ease-in-out;
+ opacity: .5;
+ transform: translate(0,0);
+ transition: opacity .25s ease-in-out;
+}
+
+.img-container {
+  transition: transform .1s ease;
+}
+
+.img-container:hover {
+    transform: scale(1.1);
+}
+
+
+.Card_Box img {
+  transition: transform .1s ease;
+  opacity: 5px;
+}
+
+.Card_title {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  height: 100%;
+}
