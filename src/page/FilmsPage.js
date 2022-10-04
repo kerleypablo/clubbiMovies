@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../Components/Header';
+import Context from '../context/Context';
+import LoadingPage from './loadingPage';
 
 export default function FilmPage() {
+  const { filmes } = useContext(Context);
   return (
-    <div>
-      <Header title="Filmes" />
-    </div>
+    !filmes ? (
+      <LoadingPage />)
+      : (
+        <div>
+          <Header title="Filmes" />
+        </div>
+      )
   );
 }

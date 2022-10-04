@@ -1,0 +1,11 @@
+.popcorn{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ height: 100vh;
+}
+
+.popcorn img {
+  height: 150px;
+}

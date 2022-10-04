@@ -8,17 +8,18 @@ function Provider({ children }) {
 
   const getallFilms = async () => {
     const data = await getFilms();
+    setfilmes(data);
     return data;
   };
 
   useEffect(() => {
-    setfilmes(getallFilms());
+    getallFilms();
   }, []);
 
   const state = useMemo(() => ({
     filmes,
     setfilmes,
-  }), []);
+  }), [filmes]);
 
   return (
     <div>
