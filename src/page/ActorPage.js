@@ -10,9 +10,9 @@ export default function FilmPage() {
   const { actors } = useContext(Context);
   const { search } = useContext(Context);
   const {
-    idade, cabelo,
-    olho, inputText,
+    idade, cabelo, inputText, filme, specie,
   } = search;
+
   return (
     <div>
       { !actors ? (
@@ -20,13 +20,14 @@ export default function FilmPage() {
         : (
           <div>
             <Header title="Atores/Atrizes" />
-            <Filtros atores />
+            <Filtros atores filmes={false} />
             <div className="filmesConteiner">
               { actors.filter((elemente) => elemente.name.includes(!inputText ? '' : inputText))
-                .filter((elemente) => elemente.eye_color.includes(!olho ? '' : olho))
                 .filter((elemente) => elemente.hair_color.includes(!cabelo ? '' : cabelo))
                 .filter((elemente) => elemente.age.includes(!idade ? '' : idade))
-                // .filter((elemente) => elemente.gender.includes(!sexo ? '' : sexo))
+                .filter((elemente) => elemente.films[0].slice(37).includes(!filme ? '' : filme))
+                .filter((elemente) => elemente.species.slice(40).includes(!specie ? '' : specie))
+                // .filter((elemente) => elemente.gender.includes(!sex ? '' : sex))
                 .map((act, index) => (
                   <div key={act.id}>
                     <CardActors className="card" actor={act} id={index} />

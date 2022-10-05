@@ -14,7 +14,6 @@ export const getFilms = async () => {
 export const getFilmsById = async (URLId) => {
   try {
     const { data } = await axios.get(URLId);
-    console.log(data);
     return data;
   } catch (error) {
     return { error: error.response };

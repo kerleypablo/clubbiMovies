@@ -27,3 +27,15 @@
   border-radius: 5px;
   background-color: white;
 }
+
+.searchSelect {
+  display: flex;
+}
+
+.clear_button {
+ height: 40px;
+ width: 90px;
+ margin-left: 20px;
+ background-color: rgb(186, 133, 235);
+ color: white;
+}

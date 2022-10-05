@@ -20,7 +20,7 @@ export default function FilmPage() {
         : (
           <div>
             <Header title="Filmes" />
-            <Filtros filmes />
+            <Filtros filmes atores={false} />
             <div className="filmesConteiner">
               { filmes.filter((elemente) => elemente.title.includes(!inputText ? '' : inputText))
                 .filter((elemente) => elemente.director.includes(!director ? '' : director))
