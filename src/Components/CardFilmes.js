@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import './Styles/cardFilm.css';
 
-export default function CardFilmes({ filme }) {
+export default function CardFilmes({ filme }, expandbutton = false) {
   const navigate = useNavigate();
   const [infoPainel, setInfoPainel] = useState('painel');
   const [ativado, setAtivado] = useState(false);
@@ -24,7 +24,7 @@ export default function CardFilmes({ filme }) {
   return (
     <div className="conteiner">
       <div className={infoPainel}>
-        <button className="cardButton" type="button" onClick={clickCard}>
+        <button className="cardButton" type="button" onClick={clickCard} disabled={expandbutton}>
           <img className="Cardfilm_img" src={filme.image} alt={filme.description} />
         </button>
         { !ativado ? (null)

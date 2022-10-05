@@ -9,7 +9,7 @@
   border-right: 5px solid rgb(18, 22, 133);
   border-radius: 30px;
   margin: 10px;
-  width: 200px;
+  width: 100%;
 }
 
 .Cardfilm_img {
@@ -108,4 +108,18 @@
   height: 30px;
   background-color: blueviolet;
   border:  none;
+}
+
+.cardfilme img {
+  height: 200px;
+}
+
+.cardfilme .painel {
+  height: 200px;
+}
+
+.cardfilme .conteiner {
+  margin-top: -60px;
+  height: 200px;
+  width: 100px;
 }
