@@ -11,7 +11,7 @@ export default function Header({ title }) {
         <div className="header_boxLink">
           <Link className="header_link" to="/filmes">Filmes</Link>
           <Link className="header_link" to="/atores">Atores/Atrizes</Link>
-          <Link className="header_link" to="/filmes">Locacoes</Link>
+          <Link className="header_link" to="/locacao">Locacoes</Link>
         </div>
       </header>
     </div>

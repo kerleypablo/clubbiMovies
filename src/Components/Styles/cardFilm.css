@@ -123,3 +123,20 @@
   height: 200px;
   width: 100px;
 }
+
+.painelName {
+  position: absolute;
+  width: 200px;
+  margin-top: -200px;
+  padding-left: 50px;
+  font-size: 30px;
+  color: rgb(229, 10, 10);
+  font-weight: 900;
+}
+
+.boxActorcard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -100px;
+}

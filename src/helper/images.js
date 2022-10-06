@@ -18,6 +18,8 @@ export const deer = 'https://image.shutterstock.com/image-vector/silhouette-deer
 
 export const human = 'https://static.vecteezy.com/system/resources/previews/003/604/792/original/stick-characters-posture-icon-action-figures-symbols-human-body-silhouettes-free-vector.jpg';
 
+export const terreno = 'https://m.media-amazon.com/images/I/41SVQsLA2ZL._SX354_SY354_BL0_QL100__UXNaN_FMjpg_QL85_.jpg';
+
 export default {
-  imgFilm, imgActor, imglocation, dragon, totoro, cat, human, deer, spirit, god,
+  imgFilm, imgActor, imglocation, dragon, totoro, cat, human, deer, spirit, god, terreno,
 };

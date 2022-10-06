@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Context from '../context/Context';
 import './Styles/filtros.css';
 
-export default function Filtros({ filmes = false, atores = false }) {
+export default function Filtros({ filmes = false, atores = false, location = false }) {
   const { search, setSearch } = useContext(Context);
   const {
-    diretores, ano, score, idade, cabelo, filterFilmes, filterSpecies,
+    diretores, ano, score, idade, cabelo, filterFilmes, filterSpecies, clima, water, terrain,
   } = useContext(Context);
 
   const { inputText } = search;
@@ -70,6 +70,9 @@ export default function Filtros({ filmes = false, atores = false }) {
       sex: '',
       specie: '',
       olho: '',
+      clima: '',
+      water: '',
+      terreno: '',
     };
     setSearch(clear);
   };
@@ -107,6 +110,16 @@ export default function Filtros({ filmes = false, atores = false }) {
               {selecFilms('specie', 'specie', filterSpecies)}
             </div>
           )}
+        {
+        !location ? (null)
+          : (
+            <div className="searchSelect">
+              {selecAux('clima', 'Clima', clima)}
+              {selecAux('water', 'surface_water', water)}
+              {selecAux('terreno', 'Terreno', terrain)}
+            </div>
+          )
+      }
         <button className="clear_button" type="button" onClick={clrear}>Limpar</button>
       </div>
     </section>
@@ -116,4 +129,5 @@ export default function Filtros({ filmes = false, atores = false }) {
 Filtros.propTypes = {
   filmes: PropTypes.bool.isRequired,
   atores: PropTypes.bool.isRequired,
+  location: PropTypes.bool.isRequired,
 };

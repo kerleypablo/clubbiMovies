@@ -2,12 +2,14 @@ import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import Context from './Context';
 import { getFilms } from '../Services/filmesServices';
+import { getLocation } from '../Services/Locacaoservices';
 import { getActor } from '../Services/ActorServices';
 import { getSpecied } from '../Services/SpeciesServices';
 
 function Provider({ children }) {
   const [filmes, setfilmes] = useState([]);
   const [actors, setActor] = useState([]);
+  const [location, setlocation] = useState([]);
   const [diretores, setDiretores] = useState([]);
   const [ano, setAno] = useState([]);
   const [idade, setIdade] = useState([]);
@@ -16,6 +18,9 @@ function Provider({ children }) {
   const [sexoAc, setSexoAC] = useState([]);
   const [filterFilmes, setFilterFilmes] = useState([]);
   const [filterSpecies] = useState([]);
+  const [clima, setClima] = useState([]);
+  const [water, setwater] = useState([]);
+  const [terrain, setTerrain] = useState([]);
   const [search, setSearch] = useState({
     inputText: '',
     director: '',
@@ -27,6 +32,9 @@ function Provider({ children }) {
     sex: '',
     specie: '',
     olho: '',
+    clima: '',
+    water: '',
+    terreno: '',
   });
 
   const getallActor = async () => {
@@ -73,10 +81,26 @@ function Provider({ children }) {
     return data;
   };
 
+  const getALLlocation = async () => {
+    const data = await getLocation();
+    setlocation(data);
+    data.map((loc) => (clima.push(loc.climate)));
+    const filtroclim = clima.filter((elem, index, self) => index === self.indexOf(elem));
+    setClima(filtroclim.sort());
+    data.map((loc) => (water.push(loc.surface_water)));
+    const filtrowat = water.filter((elem, index, self) => index === self.indexOf(elem));
+    setwater(filtrowat.sort());
+    data.map((loc) => (terrain.push(loc.terrain)));
+    const filtroter = terrain.filter((elem, index, self) => index === self.indexOf(elem));
+    setTerrain(filtroter.sort());
+    return null;
+  };
+
   useEffect(() => {
     getallFilms();
     getallActor();
     getAllSpecies();
+    getALLlocation();
   }, []);
 
   const state = useMemo(() => ({
@@ -95,6 +119,12 @@ function Provider({ children }) {
     cabelo,
     sexoAc,
     filterSpecies,
+    location,
+    setlocation,
+    clima,
+    setClima,
+    water,
+    terrain,
   }), [filmes, search, actors]);
 
   return (

@@ -12,4 +12,14 @@ export const getActor = async () => {
   }
 };
 
-export default { getActor };
+export const getActorById = async (URL_ID) => {
+  try {
+    const { data } = await axios.get(URL_ID);
+    console.log(data);
+    return data;
+  } catch (error) {
+    return { error: error.response };
+  }
+};
+
+export default { getActor, getActorById };
