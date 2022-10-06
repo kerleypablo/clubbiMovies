@@ -62,7 +62,7 @@ export default function Filtros({ filmes = false, atores = false, location = fal
     const clear = {
       inputText: '',
       director: '',
-      ano: 0,
+      ano: '',
       score: '',
       idade: '',
       cabelo: '',

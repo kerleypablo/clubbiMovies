@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
@@ -84,8 +85,8 @@ export default function CardLocation({ locate, blockbutton = false }) {
                 ? (<p> sem filmes </p>)
                 : (
                   <div className="boxActorcard">
-                    {locAct.map((act) => (
-                      <Link to={`/atores/${act.id}`} className="cardfilme">
+                    {locAct.map((act, index) => (
+                      <Link to={`/atores/${act.id}`} key={index} className="cardfilme">
                         <button type="button">{act.name}</button>
                       </Link>
                     ))}

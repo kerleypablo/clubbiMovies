@@ -27,7 +27,6 @@ export default function FilmPage() {
                 .filter((elemente) => elemente.age.includes(!idade ? '' : idade))
                 .filter((elemente) => elemente.films[0].slice(37).includes(!filme ? '' : filme))
                 .filter((elemente) => elemente.species.slice(40).includes(!specie ? '' : specie))
-                // .filter((elemente) => elemente.gender.includes(!sex ? '' : sex))
                 .map((act, index) => (
                   <div key={act.id}>
                     <CardActors className="card" actor={act} id={index} />

@@ -78,6 +78,7 @@ export default function CardActors({ actor }) {
       <div className={infoPainel}>
         <button className="cardButton" type="button" onClick={clickCard}>
           <img className="Cardfilm_img" src={igmcard} alt={actor.name} />
+          <p className="painelName">{actor.name}</p>
         </button>
         { !ativado ? (null)
           : (
@@ -106,7 +107,7 @@ export default function CardActors({ actor }) {
                   : (
                     actFilm.map((film) => (
                       <Link to={`/filmes/${film.id}`} className="cardfilme">
-                        <CardFilmes expandbutton filme={film} />
+                        <CardFilmes expandbutton blockbutton filme={film} />
                       </Link>
                     ))
                   )}

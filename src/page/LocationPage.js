@@ -26,8 +26,6 @@ export default function LocationPage() {
                 .filter((elemente) => elemente.climate.includes(!clima ? '' : clima))
                 .filter((elemente) => elemente.surface_water.includes(!water ? '' : water))
                 .filter((elemente) => elemente.terrain.includes(!terreno ? '' : terreno))
-                // .filter((elemente) => elemente.species.slice(40).includes(!specie ? '' : specie))
-                // .filter((elemente) => elemente.gender.includes(!sex ? '' : sex))
                 .map((loc, index) => (
                   <div key={loc.id}>
                     <CardLocation className="card" blockbutton={false} locate={loc} id={index} />

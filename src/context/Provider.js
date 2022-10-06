@@ -24,7 +24,7 @@ function Provider({ children }) {
   const [search, setSearch] = useState({
     inputText: '',
     director: '',
-    ano: 0,
+    ano: '',
     score: '',
     idade: '',
     cabelo: '',
